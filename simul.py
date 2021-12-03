@@ -1,16 +1,25 @@
 import plotly.graph_objects as go
 
 import numpy as np
-# Función (1*(10**-6))*(t**3) - (0.0047)*(t**2) + (4.1719)*t
+# Función (1*(10**-6))*(t**3) - (0.0047)*(t**2) + (4.1719)*t+1328.7|
 
 # Info de la curva
-v1 = -1 # Valor de -1 original
+ex = 0
+v1 =-1 # Valor de -1 original
 v2 = 1 # Original: 1
-v3 = 1000 # Original: 100
+v3 = 100 # Original: 100
 coef = 3
 t = np.linspace(v1, v2, v3)
-x = (1*(10**-6))*(t**3) - (0.0047)*(t**2) + (4.1719)*t# t+t**2
-y = t+t**coef # t-t**2
+# Variables
+
+xinicial,yinicial= 100,700 # Punto inicial
+Ax,Ay = 1350,1250 # Punto A
+Bx,By = 725,2325
+Cx,Cy = 1975,175
+xfinal,yfinal = 2600,800 # Punto final
+
+x = xinicial,Bx,Ax,Cx,xfinal
+y = yinicial,By,Ay,Cy,yfinal
 xm = np.min(x) - 1.5
 xM = np.max(x) + 1.5
 ym = np.min(y) - 1.5
